@@ -4,3 +4,11 @@ spring:
     url: jdbc:log4jdbc:oracle:thin:@203.229.218.220:1521/orcl
     username: PHM7_1_QMS_USER
     password: PHM71QMSUSER
+
+mybatis:
+  mapper-locations: mapper/**/*.xml
+  type-aliases-package: iit.qms.domain.**.entity, iit.qms.domain.module.**.entity
+  type-handlers-package: iit.qms.config.mybatis.typehandler
+  configuration:
+    map-underscore-to-camel-case: true
+    jdbc-type-for-null: varchar
