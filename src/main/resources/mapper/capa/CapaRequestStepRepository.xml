@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="iit.qms.domain.module.capa.repository.CapaRequestStepRepository">
+
+    <insert id="insert" parameterType="CapaRequestStep">
+
+    </insert>
+
+    <update id="update" parameterType="CapaRequestStep">
+
+    </update>
+
+    <delete id="delete" parameterType="CapaRequestStep">
+
+    </delete>
+
+</mapper>

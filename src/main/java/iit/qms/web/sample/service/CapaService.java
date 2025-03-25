@@ -4,7 +4,7 @@ public interface CapaService {
 
     void request();
 
-    void toNextProcess();
+    void toNextProcess(Long processId);
 
     void search();
 

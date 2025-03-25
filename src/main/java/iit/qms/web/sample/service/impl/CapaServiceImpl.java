@@ -1,9 +1,8 @@
 package iit.qms.web.sample.service.impl;
 
-import iit.qms.domain.module.Modular;
-import iit.qms.domain.module.capa.entity.Capa;
-import iit.qms.domain.module.Process;
-import iit.qms.domain.module.ProcessId;
+import iit.qms.domain.Modular;
+import iit.qms.domain.module.capa.Capa;
+import iit.qms.domain.process.Process;
 import iit.qms.web.sample.service.CapaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -22,8 +21,9 @@ public class CapaServiceImpl implements CapaService {
     }
 
     @Override
-    public void toNextProcess() {
-        modular.toNext(new ProcessId());
+    public void toNextProcess(Long processId) {
+        Process process = modular.getProcess(processId);
+        process.toNext();
     }
 
     @Override

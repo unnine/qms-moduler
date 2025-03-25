@@ -24,9 +24,9 @@ public class CapaController {
         return ResponseEntity.ok().build();
     }
 
-    @PutMapping("/next-process")
-    public ResponseEntity<?> nextProcess() {
-        capaService.toNextProcess();
+    @PutMapping("/{processId}/next-process")
+    public ResponseEntity<?> nextProcess(@PathVariable Long processId) {
+        capaService.toNextProcess(processId);
         return ResponseEntity.ok().build();
     }
 
