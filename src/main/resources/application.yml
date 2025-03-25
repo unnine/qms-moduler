@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc:log4jdbc:oracle:thin:@203.229.218.220:1521/orcl
+    username: PHM7_1_QMS_USER
+    password: PHM71QMSUSER
