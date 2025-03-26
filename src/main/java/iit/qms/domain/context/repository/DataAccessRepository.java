@@ -1,10 +1,16 @@
 package iit.qms.domain.context.repository;
 
-public interface DataAccessRepository<E> {
+import java.util.List;
 
-    void insert(E step);
+public interface DataAccessRepository<E, ID> {
 
-    void update(E step);
+    List<E> findAll();
 
-    void delete(E step);
+    E findById(ID id);
+
+    void insert(E e);
+
+    void update(E e);
+
+    void delete(E e);
 }

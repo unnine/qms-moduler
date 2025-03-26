@@ -1,12 +1,16 @@
 package iit.qms.web.sample.service.impl;
 
 import iit.qms.domain.Modular;
-import iit.qms.domain.module.capa.Capa;
+import iit.qms.domain.module.capa.entity.Capa;
 import iit.qms.domain.process.Process;
 import iit.qms.web.sample.service.CapaService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class CapaServiceImpl implements CapaService {
@@ -22,8 +26,8 @@ public class CapaServiceImpl implements CapaService {
 
     @Override
     public void toNextProcess(Long processId) {
-        Process process = modular.getProcess(processId);
-        process.toNext();
+        Optional<Process> processOptional = modular.getProcess(processId);
+        processOptional.ifPresentOrElse(Process::toNext, () -> log.warn("not found process of process id: '" + processId + "'"));
     }
 
     @Override

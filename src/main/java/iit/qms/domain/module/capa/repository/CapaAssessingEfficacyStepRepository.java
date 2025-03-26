@@ -5,5 +5,5 @@ import iit.qms.domain.step.StepRepository;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface CapaAssessingEfficacyStepRepository extends StepRepository<CapaReceiptStep> {
+public interface CapaAssessingEfficacyStepRepository extends StepRepository<CapaReceiptStep, Long> {
 }

@@ -3,11 +3,11 @@ package iit.qms.domain.step;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public class PersistentStep<E extends Step> implements Step {
+public class PersistentStep implements Step {
 
-    private final E step;
+    private final Step step;
 
-    private final StepRepository<E> stepRepository;
+    private final StepRepository<? extends Step, ?> stepRepository;
 
 
     @Override
@@ -23,12 +23,12 @@ public class PersistentStep<E extends Step> implements Step {
     @Override
     public void enter() {
         step.enter();
-        stepRepository.update(step);
+//        stepRepository.update(step);
     }
 
     @Override
     public void finish() {
         step.finish();
-        stepRepository.update(step);
+//        stepRepository.update(step);
     }
 }

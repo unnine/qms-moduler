@@ -1,25 +1,27 @@
 package iit.qms.domain;
 
-import iit.qms.domain.context.ProcessProgressContext;
+import iit.qms.domain.context.WorkflowContext;
 import iit.qms.domain.module.Module;
 import iit.qms.domain.process.Process;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 @Component
 @RequiredArgsConstructor
 public class ModularImpl implements Modular {
 
-     private final ProcessProgressContext processContextService;
+     private final WorkflowContext processContainer;
 
 
      @Override
      public <E extends Module> Process start(E e) {
-          return processContextService.startModule(e);
+          return processContainer.startModule(e);
      }
 
      @Override
-     public Process getProcess(Long id) {
-          return processContextService.getProcess(id);
+     public Optional<Process> getProcess(Long id) {
+          return processContainer.getProcess(id);
      }
 }
